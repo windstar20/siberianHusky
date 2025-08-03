@@ -12,6 +12,8 @@ function App() {
     console.log('clicked');
     console.log('clicked');
     console.log('clicked');
+    console.log('clicked');
+    console.log('clicked');
   };
 
   return (
