@@ -8,7 +8,7 @@ import reactPlugin from 'eslint-plugin-react';
 import reactNaming from 'eslint-plugin-react-naming-convention';
 
 export default tseslint.config([
-  globalIgnores(['dist', 'eslint.config.js']),
+  globalIgnores(['dist', 'eslint.config.js', 'commitlint.config.js']),
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     extends: [
