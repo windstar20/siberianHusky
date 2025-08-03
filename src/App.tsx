@@ -4,8 +4,11 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('');
-  const handleButtonclick = () => {
+  const handleButtonClick = () => {
     setName('ChaCha');
+  };
+  const handleLogClick = () => {
+    console.log('clicked');
   };
 
   return (
@@ -18,7 +21,8 @@ function App() {
         </p>
       </div>
       <div> {name}</div>
-      <button onClick={handleButtonclick}>Change Name </button>
+      <button onClick={handleButtonClick}>Change Name </button>
+      <button onClick={handleLogClick}>Log Button Name </button>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
