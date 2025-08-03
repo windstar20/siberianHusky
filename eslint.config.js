@@ -48,6 +48,56 @@ export default tseslint.config([
           checkDestructuredProps: false, // props로 전달받은 함수는 검사하지 않음
         },
       ],
+      // CamelCase 네이밍 규칙
+      '@typescript-eslint/naming-convention': [
+        'error',
+        // 변수 (useState setter 포함)
+        {
+          selector: 'variable',
+          format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+          filter: {
+            // React Hook과 상수는 예외 처리
+            regex: '^(use[A-Z].*|[A-Z0-9_]+)$',
+            match: false,
+          },
+        },
+        // React Hook useState setter
+        {
+          selector: 'variable',
+          filter: {
+            regex: '^set[A-Z]',
+            match: true,
+          },
+          format: ['camelCase'],
+          prefix: ['set'],
+        },
+        // 함수명
+        {
+          selector: 'function',
+          format: ['camelCase', 'PascalCase'],
+        },
+        // 매개변수
+        {
+          selector: 'parameter',
+          format: ['camelCase'],
+          leadingUnderscore: 'allow',
+        },
+        // 객체 프로퍼티
+        {
+          selector: 'property',
+          format: ['camelCase', 'PascalCase'],
+          filter: {
+            // CSS-in-JS나 외부 API 속성은 예외
+            regex: '^(data-|aria-|css|--)',
+            match: false,
+          },
+        },
+        // 타입/인터페이스
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+      ],
 
       // React 권장 규칙 직접 추가
       'react/jsx-uses-react': 'error',
