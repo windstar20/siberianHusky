@@ -9,11 +9,6 @@ function App() {
   };
   const handleLogClick = () => {
     console.log('clicked');
-    console.log('clicked');
-    console.log('clicked');
-    console.log('clicked');
-    console.log('clicked');
-    console.log('clicked');
   };
 
   return (
